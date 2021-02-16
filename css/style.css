@@ -1,0 +1,38 @@
+@charset="utf-8"; 
+
+/*required*/
+
+* { margin: 0; padding: 0; webkit-box-sizing: border-box; }
+
+html { font-size: 100%; }
+
+body { font-family: sans-serif; }
+
+img { width: 100%; }
+
+/*global*/
+
+.sub_title　{
+	font-family: 'Oswald', sans-serif;
+}
+
+button {
+	background: transparent; 
+	border: 2px #00214d solid; 
+	font-family: 'Oswald', sans-serif;
+	-webkit-appearance: none; 
+	transition: background 1s; 
+}
+
+button:hover { opacity: .7; }
+
+a { 
+	display: block;
+	text-decoration: none;
+	-webkit-appearance: none;
+	transition: 1s; 
+ }
+ 
+a:hover { opacity: .7; }
+ 
+ 
