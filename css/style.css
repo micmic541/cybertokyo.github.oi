@@ -6,15 +6,15 @@
 
 html { font-size: 100%; }
 
-body { font-family: sans-serif; }
+body { font-family: sans-serif; letter-spacing: .1rem; }
 
 img { width: 100%; }
 
+.full-wrapper { overflow-y: hidden; }
+
 /*global*/
 
-.sub_title　{
-	font-family: 'Oswald', sans-serif;
-}
+.sub-title { font-family: 'Oswald', sans-serif; }
 
 button {
 	background: transparent; 
@@ -28,11 +28,75 @@ button:hover { opacity: .7; }
 
 a { 
 	display: block;
-	text-decoration: none;
+	text-decoration: none !important;
 	-webkit-appearance: none;
 	transition: 1s; 
  }
  
 a:hover { opacity: .7; }
+
+/*header*/
+
+#header {
+	background-image: url(../img/cyber_bg.jpg); 
+	background-position: center cneter; 
+	background-repeat: no-repeat; 
+	background-size: cover; 
+	height: 100vh; 
+}
+
+.navbar-brand {
+	float: right; 
+	height: 100%; 
+	width: 248px; 
+}
+
+/*concept*/
+
+.concept { clear: both; }
+
+.concept .flex-box { display: flex; justify-content: space-around; }
+
+.concept .flex-item { 
+	background-image: url(../img/cyberpic1.jpg);
+	background-size: cover;
+	padding-top: 10%;
+	height: 480px;
+}
+
+#concept_tokyo { background-image: url(../img/cyberpic2.jpg); background-position: 0 100%;}
+
+.concept .flex-item .sub-title {
+	margin: auto;
+	color: #fff;   
+	height: 125px; 
+	width: 59%; 
+	background: #4E4E50; 
+	opacity: .75; 
+}
+
+
+
+/**conceptのflex-item imgにaタグ付けれない**/
+
+/*etc----------------------*/
+@media (max-width: 1050px) {
+	/*concept*/
+	.concept .flex-box { flex-direction: column; }
+}
+
+/*iphone 5s etc---------------*/
+@media only screen and (max-width: 600px) {
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
  
- 
+/*iPad iPadPro-----------------------------------*/
+@media(min-height: 1022px) and (max-height: 1368px) {
+}
+
+/*Surface Duo-------------------------------------------*/
+@media(min-width: 500px) and (max-device-width: 540px) {
+}
