@@ -14,17 +14,18 @@ img { width: 100%; }
 
 /*global*/
 
-.sub-title { font-family: 'Oswald', sans-serif; }
+.sub-title, .btn { font-family: 'Oswald', sans-serif; }
 
-button {
+.btn {
+	font-size: 1.24rem; 
 	background: transparent; 
-	border: 2px #00214d solid; 
+	border: 1.7px #746f7d solid;
+	border-radius: 5px; 
+	padding: 10px 28px; 
 	font-family: 'Oswald', sans-serif;
 	-webkit-appearance: none; 
 	transition: background 1s; 
 }
-
-button:hover { opacity: .7; }
 
 a { 
 	display: block;
@@ -33,7 +34,7 @@ a {
 	transition: 1s; 
  }
  
-a:hover { opacity: .7; }
+a:hover, .btn:hover { opacity: .7; }
 
 /*header*/
 
@@ -46,16 +47,15 @@ a:hover { opacity: .7; }
 }
 
 .navbar-brand {
-	float: right; 
+	float: right !important; 
 	height: 100%; 
 	width: 248px; 
 }
 
 /*concept*/
 
-.concept { clear: both; }
-
-.concept .flex-box { display: flex; justify-content: space-around; }
+.concept .flex-box,
+.about .flex-box { display: flex; justify-content: space-around; }
 
 .concept .flex-item { 
 	background-image: url(../img/cyberpic1.jpg);
@@ -69,11 +69,17 @@ a:hover { opacity: .7; }
 .concept .flex-item .sub-title {
 	margin: auto;
 	color: #fff;   
-	height: 125px; 
-	width: 59%; 
+	height: 99px; 
+	width: 55%; 
 	background: #4E4E50; 
 	opacity: .75; 
 }
+
+/*about*/
+
+.about { background: #DCDCDC; }
+
+.about .flex-item img { width: 100%; height: 400px; object-fit: cover; }
 
 
 
@@ -82,7 +88,10 @@ a:hover { opacity: .7; }
 /*etc----------------------*/
 @media (max-width: 1050px) {
 	/*concept*/
-	.concept .flex-box { flex-direction: column; }
+	.concept .flex-box,
+	.about .flex-box { flex-direction: column; }
+	
+	#about_tokyo { flex-direction: column-reverse; }
 }
 
 /*iphone 5s etc---------------*/
