@@ -79,8 +79,26 @@ a:hover, .btn:hover { opacity: .7; }
 
 .about { background: #DCDCDC; }
 
-.about .flex-item img { width: 100%; height: 400px; object-fit: cover; }
+.about .flex-item img { width: 100%; height: 400px; object-fit: cover; box-shadow: 10px 10px 10px rgba(0,0,0,0.6); }
 
+/*access*/
+
+.access .flex-box { justify-content: center; }
+
+.access li { list-style: none; }
+
+#access_tokyo { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+
+#map_container { width: 100%; }
+
+/*contact*/
+
+.form .btn { background: #000; border: none; padding: 10px 60px; }
+
+.form a { color: #fff; }
+
+.form input[type="text"], .form input[type="email"] { padding: 10px; }
+.form textarea { padding: 20px; }
 
 
 /**conceptのflex-item imgにaタグ付けれない**/
@@ -88,11 +106,22 @@ a:hover, .btn:hover { opacity: .7; }
 
 /*etc----------------------*/
 @media (max-width: 1050px) {
+	
 	/*concept*/
 	.concept .flex-box,
-	.about .flex-box { flex-direction: column; }
+	.about .flex-box, 
+	.access .flex-box { flex-direction: column; }
 	
 	#about_tokyo { flex-direction: column-reverse; }
+	
+	/*access*/
+	.access .flex-box { align-items: center; }
+	
+	#access_tokyo { flex-direction: row; justify-content: center; }
+}
+
+@media (max-width: 767px) {
+	p, li{ font-size: 4vw; }
 }
 
 /*iphone 5s etc---------------*/
@@ -109,4 +138,5 @@ a:hover, .btn:hover { opacity: .7; }
 
 /*Surface Duo-------------------------------------------*/
 @media(min-width: 500px) and (max-device-width: 540px) {
+	p, li { font-size: 3vw; }
 }
