@@ -47,11 +47,9 @@ a:hover, .btn:hover { opacity: .7; }
 	height: 100vh; 
 }
 
-.navbar-brand {
-	float: right; 
-	height: 100%; 
-	width: 248px; 
-}
+.navbar-brand { float: right; height: 100%; width: 248px; }
+
+.mobile_menu { display: none; }
 
 /*concept*/
 
@@ -141,6 +139,26 @@ li { list-style: none; }
 }
 
 @media (max-width: 767px) {
+	/*header menu*/
+	.mobile_a { position: absolute; }
+	header .navbar-brand { 
+		position: relative;
+		top: 633px; 
+		right: -15px; 
+		width: 180px;
+		height: auto;
+	}
+	
+	.mobile_menu { display: block; color: #fff; position: absolute; left: 89%; }
+	#mobile_logo { float: none; position: sticky; left: 25px; }
+	.inner { 
+		display: flex; 
+		flex-direction: column;
+		align-items: center;
+		position: relative; 
+		top: 20px; 
+	}
+	
 	p, li{ font-size: 4vw; }
 }
 
