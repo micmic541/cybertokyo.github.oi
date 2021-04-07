@@ -1,7 +1,7 @@
 @charset="utf-8"; 
+/***修正済2021-04-07***/
 
 /*required*/
-
 * { margin: 0; padding: 0; webkit-box-sizing: border-box; }
 
 html { font-size: 100%; }
@@ -13,7 +13,6 @@ img { width: 100%; }
 .full-wrapper { overflow-y: hidden; }
 
 /*global*/
-
 .sub-title, .btn { font-family: 'Oswald', sans-serif; }
 
 .btn {
@@ -32,13 +31,11 @@ a {
 	text-decoration: none !important;
 	-webkit-appearance: none;
 	transition: 1s; 
-	custor: pointer; 
- }
+}
  
 a:hover, .btn:hover { opacity: .7; }
 
 /*header*/
-
 #header {
 	background-image: url(../img/cyber_bg.jpg); 
 	background-position: center cneter; 
@@ -52,7 +49,6 @@ a:hover, .btn:hover { opacity: .7; }
 .mobile_menu { display: none; }
 
 /*concept*/
-
 .concept .flex-box,
 .about .flex-box,
 #footer .flex-box { display: flex; justify-content: space-around; }
@@ -69,20 +65,18 @@ a:hover, .btn:hover { opacity: .7; }
 .concept .flex-item .sub-title {
 	margin: auto;
 	color: #fff;   
-	height: 99px; 
+	min-height: 104px; 
 	width: 55%; 
 	background: #4E4E50; 
 	opacity: .75; 
 }
 
 /*about*/
-
 .about { background: #DCDCDC; }
 
 .about .flex-item img { width: 100%; height: 400px; object-fit: cover; box-shadow: 10px 10px 10px rgba(0,0,0,0.6); }
 
 /*access*/
-
 .access .flex-box { justify-content: center; }
 
 li { list-style: none; }
@@ -92,7 +86,6 @@ li { list-style: none; }
 #map_container { width: 100%; }
 
 /*contact*/
-
 .form .btn { background: #000; border: none; padding: 10px 60px; }
 
 .form a { color: #fff; }
@@ -101,21 +94,22 @@ li { list-style: none; }
 .form textarea { padding: 20px; }
 
 /*footer*/
+#footer a { color: #fff; }
 
-
-#footer ul #f_concept:hover { color: #F45DFE; }
-#footer ul #f_events:hover { color: #3BE40F; }
-#footer ul #f_about:hover { color: #FC554A; }
-#footer ul #f_access:hover { color: #4962FC; }
-#footer ul #f_contact:hover { color: #FB8F1E; }
+#footer ul #f_concept:hover, .global-nav ul #f_concept:hover { color: #c156ff; }
+#footer ul #f_events:hover,  .global-nav ul #f_events:hover { color: #3BE40F; }
+#footer ul #f_about:hover, .global-nav ul #f_about:hover { color: #FC554A; }
+#footer ul #f_access:hover, .global-nav ul #f_access:hover { color: #4962FC; }
+#footer ul #f_contact:hover, .global-nav ul #f_contact:hover { color: #FB8F1E; }
 #footer .sns-box a:hover { color: yellow;  }
 
 #footer .flex-box { background: #000; }
 
 #footer .navbar-brand { float: none; height: 100%; width: 170px; }
 
-/**conceptのflex-item imgにaタグ付けれない**/
-/**OGPの写真**/
+/***for mobileロゴとメニュータブ対曲線におきたかったため、
+①ディスプレイのロゴBootstrapで決して❷モバイルのロゴを↓の方にいどうして、
+stickyを設定した***/
 
 /*etc----------------------*/
 @media (max-width: 1050px) {
@@ -139,6 +133,8 @@ li { list-style: none; }
 }
 
 @media (max-width: 767px) {
+	p, li{ font-size: 4vw; line-height: 25px; }
+	
 	/*header menu*/
 	.mobile_a { position: absolute; }
 	header .navbar-brand { 
@@ -149,17 +145,60 @@ li { list-style: none; }
 		height: auto;
 	}
 	
-	.mobile_menu { display: block; color: #fff; position: absolute; left: 89%; }
-	#mobile_logo { float: none; position: sticky; left: 25px; }
+	.mobile_menu { 
+		display: block;
+		color: #fff !important;
+		position: fixed;
+		left: 84%;
+		right: 0;
+		z-index: 4;
+	}
+	
+	.ghost { font-size: 27px; transform: translateY(20px); transition: all .5s; }
+	#menu_text { transform: translateY(20px); transition: all 1s; }
+	
+	.exit, #close_text { position: relative; top: -150px; transition: .5s; }
+	.exit { font-size: 27px; }
+	
 	.inner { 
 		display: flex; 
 		flex-direction: column;
 		align-items: center;
 		position: relative; 
-		top: 20px; 
+		top: 18px; 
 	}
 	
-	p, li{ font-size: 4vw; }
+	/*animation for menu-button*/
+	.mobile_menu a:hover, .exit a:hover { opacity: 1; color: #ff00e0 !important; }
+	
+	.ghost.clicked, #menu_text.clicked { opacity: 0; transform: translateY(0); }
+	.exit.clicked, #close_text.clicked{ top: -30px; }
+	
+	.mobile_menu.scroll { color: #00ff14 !important; }
+	
+	#mobile_logo { float: none; position: sticky; left: 25px; }
+	
+	/*nav*/
+	header .global-nav { 
+		color: #fff; 
+		opacity: 0;
+		height: 100%;
+		width: 100%;
+		background: #000;
+		position: fixed;
+		z-index: 3; 
+		left: 0; 
+		transition: all 1s; 
+	}
+	
+	.global-nav ul a { color: #fff; display: block !important; width: 300px; height: 50px; }
+	
+	.global-nav.clicked { 
+		display: flex !important; 
+		justify-content: center; 
+		align-items: center; 
+		opacity: .85; 
+	}
 }
 
 /*Surface Duo-------------------------------------------*/
